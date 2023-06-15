@@ -1,0 +1,6 @@
+<%= form_with model: [@list, bookmark] do |form| %>
+  <%= form.collection_select(:movie_id, Movie.all, :id, :title) %>
+  <%= form.label :comment %>
+  <%= form.text_field :comment %>
+  <%= form.submit %>
+<% end %>

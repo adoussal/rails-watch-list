@@ -1,0 +1,24 @@
+<h1><%= @list.name %></h1>
+
+<%= link_to 'Add Movie', new_list_bookmark_path(@list), class: "btn btn-primary" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Movie Title</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @list.bookmarks.each do |bookmark| %>
+      <tr>
+        <td><%= bookmark.movie.title %></td>
+        <td>
+          <%= form_with url: bookmark_path(bookmark), method: :delete, class: 'd-inline' do %>
+            <%= submit_tag 'Delete', class: "btn btn-danger" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
