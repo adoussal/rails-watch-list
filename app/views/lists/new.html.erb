@@ -1,3 +1,19 @@
-<h1>New List</h1>
+<div class="banner">
+  <div class="banner-content text-center">
+    <h1 class="white-text">New List</h1>
+  </div>
+</div>
 
-<%= render 'form', list: @list %>
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-center mb-3">Create New List</h2>
+
+          <%= render 'form', list: @list %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
